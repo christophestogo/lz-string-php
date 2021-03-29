@@ -79,7 +79,7 @@ class LZUtil
         if ($len <= 0) {
             return -1;
         }
-        $h = ord($ch{0});
+        $h = ord($ch[0]);
         if ($h <= 0x7F) return $h;
         if ($h < 0xC2) return -3;
         if ($h <= 0xDF && $len > 1) return ($h & 0x1F) << 6 | (ord($ch[1]) & 0x3F);
